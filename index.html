@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UX/UI Visual Analyzer</title>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="background-glow"></div>
+
+<div class="container">
+
+    <header class="hero">
+        <h1>UX/UI Visual Analyzer</h1>
+        <p>
+            Програмний модуль візуального аналізу інтерфейсів
+        </p>
+    </header>
+
+    <section class="upload-card">
+
+        <div class="upload-area" id="uploadArea">
+            <input type="file" id="imageInput" accept="image/*" hidden />
+
+            <div class="upload-content">
+                <div class="upload-icon">⬆</div>
+                <h2>Завантажте скріншот сайту</h2>
+                <p>PNG, JPG, WEBP</p>
+
+                <button id="uploadBtn">
+                    Обрати зображення
+                </button>
+            </div>
+        </div>
+
+        <div class="preview-wrapper">
+            <img id="previewImage" />
+            <canvas id="mainCanvas"></canvas>
+        </div>
+
+    </section>
+
+    <section class="dashboard">
+
+        <div class="score-card main-score">
+            <h3>Загальна оцінка UX/UI</h3>
+
+            <div class="circle-score">
+                <span id="totalScore">0</span>
+            </div>
+
+            <div class="score-label">
+                Якість інтерфейсу
+            </div>
+        </div>
+
+        <div class="metrics">
+
+            <div class="metric-card">
+                <h4>Контрастність</h4>
+
+                <div class="metric-value" id="contrastValue">
+                    0%
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar" id="contrastBar"></div>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <h4>Візуальний баланс</h4>
+
+                <div class="metric-value" id="balanceValue">
+                    0%
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar" id="balanceBar"></div>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <h4>Читабельність</h4>
+
+                <div class="metric-value" id="readabilityValue">
+                    0%
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar" id="readabilityBar"></div>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <h4>Фокус уваги</h4>
+
+                <div class="metric-value" id="focusValue">
+                    0%
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar" id="focusBar"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="wcag-section">
+
+        <div class="wcag-card">
+            <h3>WCAG AA</h3>
+            <div class="wcag-status" id="wcagAA">
+                Не перевірено
+            </div>
+        </div>
+
+        <div class="wcag-card">
+            <h3>WCAG AAA</h3>
+            <div class="wcag-status" id="wcagAAA">
+                Не перевірено
+            </div>
+        </div>
+
+    </section>
+
+    <section class="maps-section">
+
+        <div class="map-card">
+            <h3>Мапа контрасту</h3>
+            <canvas id="contrastMap"></canvas>
+        </div>
+
+        <div class="map-card">
+            <h3>Мапа фокусу</h3>
+            <canvas id="focusMap"></canvas>
+        </div>
+
+        <div class="map-card">
+            <h3>Мапа сліпих зон</h3>
+            <canvas id="blindMap"></canvas>
+        </div>
+
+    </section>
+
+    <section class="palette-section">
+
+        <h2>Домінуюча палітра кольорів</h2>
+
+        <div class="palette" id="palette"></div>
+
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
